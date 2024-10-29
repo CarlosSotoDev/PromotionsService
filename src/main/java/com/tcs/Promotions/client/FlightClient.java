@@ -8,6 +8,7 @@ import java.util.List;
 
 @FeignClient (name ="fligthservice")
 public interface FlightClient {
+
     @GetMapping("/api/v1/flights")
     List<FlightDTO> getAllFlights();
 }

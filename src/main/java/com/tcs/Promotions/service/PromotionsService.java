@@ -4,6 +4,7 @@ import com.tcs.Promotions.client.FlightClient;
 import com.tcs.Promotions.client.HotelClient;
 import com.tcs.Promotions.dto.FlightDTO;
 import com.tcs.Promotions.dto.HotelDTO;
+import com.tcs.Promotions.dto.PromotionsDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,8 +21,13 @@ public class PromotionsService {
 
 
     //Methods
-    public void createPromotion(){
+    public PromotionsDTO createPromotion(){
         List<HotelDTO> hotels = hotelClient.getAllHotels();
+
         List<FlightDTO> flights = flightClient.getAllFlights();
+
+        return new PromotionsDTO(hotels, flights);
     }
+
+
 }
